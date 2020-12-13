@@ -5,7 +5,7 @@ function AddTask() {
     <div className="add-task__actions">
         <label htmlFor="add-task-input" className="visuallyhidden">Add new to do task</label>
         <input id="add-task-input" className="add-task__input-field"></input>
-        <button className="button">Add</button>
+        <button className="button add-task__button">Add</button>
     </div>
   );
 }

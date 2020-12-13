@@ -10,6 +10,10 @@
     margin: 0 auto;
     max-width: 500px;
   }
+
+  .add-task__button {
+    margin-left: 6px;
+  }
   
   @media screen and (min-width: 600px) {
     .add-task__actions {
