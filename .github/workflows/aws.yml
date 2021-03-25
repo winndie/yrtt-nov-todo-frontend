@@ -39,4 +39,4 @@ jobs:
           aws s3 cp \
             --recursive \
             --region eu-west-2 \
-            build s3://coding-egret.todo
+            build s3://coding-egret-todo
