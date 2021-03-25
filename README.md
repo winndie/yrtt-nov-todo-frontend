@@ -3,7 +3,8 @@
 #### Project instruction is [here](./README.original.md)
 
 #### Technology stack used
-- [ ] React
+- [X] React
 - [ ] Bootstrap
+- [X] AWS S3 Buckets
 - [ ] CI/CD pipeline
 - [ ] Terraform
