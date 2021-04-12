@@ -1,33 +1,4 @@
 .App {
   text-align: center;
-}
-
-/* Header */
-.header {
-  text-align: center;
-}
-
-/* Tasks */
-.all-tasks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin: 0 auto;
-  max-width: 700px;
-  text-align: left;
-}
-
-.incomplete-tasks, .complete-tasks {
-  flex: 1 1 50%;
-}
-
-.task-list {
-  list-style-type: none;
-  padding-inline-start: 0;
-}
-
-@media screen and (min-width: 600px) {
-  .all-tasks {
-    flex-wrap: nowrap;
-  }
+  min-height: 100%;
 }

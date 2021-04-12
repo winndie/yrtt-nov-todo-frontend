@@ -1,0 +1,14 @@
+.container-margin {
+    margin-top: 5rem;
+}
+.tutorialList {
+    background-color: grey;
+    padding: 1%;
+}
+.tutorial {
+    background-color: rgb(202, 202, 202);
+    padding: 5%;
+}
+.btn {
+  border-spacing: 10%;
+}    
