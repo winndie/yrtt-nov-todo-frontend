@@ -26,11 +26,7 @@ http://localhost:3000
 
 To run unit test of the application:
 ```
-npm test -- functions
-```
-Integration test for UI
-```
-npm test -- components
+npm test
 ```
 ### Technology stack used
 [X] ReactJS
