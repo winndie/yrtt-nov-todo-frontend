@@ -1,4 +1,4 @@
-### The hosted version of this application is available [here](http://coding-egret-lingumi.s3-website.eu-west-2.amazonaws.com/)
+### The hosted version of this application is available [here](http://coding-egret-todo.s3-website.eu-west-2.amazonaws.com/)
 
 ### Running the application locally
 
