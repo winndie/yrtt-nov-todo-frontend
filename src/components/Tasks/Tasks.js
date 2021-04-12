@@ -64,7 +64,7 @@ function Tasks() {
                             <span data-testid='videoTitle'>{v.videoTitle}</span>
                         </div>
                         <div>
-                            <span>Teacher: </span>
+                            <span>Guest: </span>
                             <span data-testid='teacherName'>{v.teacherName}</span>
                         </div>
                         <div className='col-auto'>
