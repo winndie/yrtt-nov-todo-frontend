@@ -1,11 +1,11 @@
 .container-margin {
     margin-top: 5rem;
 }
-.tutorialList {
+.list {
     background-color: grey;
     padding: 1%;
 }
-.tutorial {
+.item {
     background-color: rgb(202, 202, 202);
     padding: 5%;
 }

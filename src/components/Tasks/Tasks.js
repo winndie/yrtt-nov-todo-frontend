@@ -57,18 +57,18 @@ function Tasks() {
                 <button className='btn btn-primary refresh'
                     onClick={loadData}>Refresh</button>
             </div>
-            <div className='row tutorialList'>
+            <div className='row list'>
                 {data.length === 0 ? <div>No tasks found!</div> :
                     data.map((v, i) =>
-                        <div key={v.id} className='col-lg-4 col-sm-6 tutorial'>
+                        <div key={v.id} className='col-lg-4 col-sm-6 item'>
                             {/* <video src={v.videoUrl} width='50%' height='35%' controls preload='none' /> */}
-                            <span data-testid='videoIndex'>{i + 1}</span>
+                            <span data-testid='taskIndex'>{i + 1}</span>
                             <div>
-                                <span data-testid='videoTitle'>{v.videoTitle}</span>
+                                <span data-testid='task'>{v.task}</span>
                             </div>
                             <div>
                                 <span>Guest: </span>
-                                <span data-testid='teacherName'>{v.teacherName}</span>
+                                <span data-testid='guest'>{v.guest}</span>
                             </div>
                             <div className='col-auto'>
                                 {v.tags.map(t => <span key={t} data-testid='tag'>{'・' + t}</span>)}

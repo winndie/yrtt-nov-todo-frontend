@@ -7,14 +7,14 @@ import each from 'jest-each'
 import axios from 'axios'
 
 const texts = [
-  ["Challenge: Work"],
+  ["Sport: Bluebell Railway"],
 ]
 
 const clicks = [
   ['Refresh', ''],
   ['Search For Tasks', '^&*^eVeaaa%%. &$'],
   ['Get Top Rated Tasks For Tags', '555  engaGiNg123'],
-  ['Search For Tasks', '^&*^chaLleNge%%. &$'],
+  ['Search For Tasks', '^&*^Sport%%. &$'],
   ['Search For Tasks', 'excitingmoving'],
   ['Get Top Rated Tasks For Tags', 'excitingmoving'],
   [],
@@ -24,12 +24,12 @@ const suits = [
   [
     ['onLoad', 'input', 1, [], []],
     ['onLoad', 'button', 3, [], []],
-    ['onLoad', 'videoIndex', 999, [], []],
-    ['onLoad', 'videoTitle', 999, [], []],
-    ['onLoad', 'teacherName', 999, [], []],
+    ['onLoad', 'taskIndex', 999, [], []],
+    ['onLoad', 'task', 999, [], []],
+    ['onLoad', 'guest', 999, [], []],
     ['onLoad', 'tag', 2600, [], []],
-    ['onClick', 'videoTitle', 1, clicks.slice(1, 4), texts.slice(0)],
-    ['onClick', 'videoIndex', 446, clicks.slice(4, 5), []],
+    ['onClick', 'task', 1, clicks.slice(1, 4), texts.slice(0)],
+    ['onClick', 'taskIndex', 446, clicks.slice(4, 5), []],
   ],
 ]
 

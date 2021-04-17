@@ -15,7 +15,7 @@ const suits = [
         ['Refresh', '', 999],
         ['Search For Tasks', '^&*^eVeaaa%%. &$', 46],
         ['Get Top Rated Tasks For Tags', '555  engaGiNg123', 16],
-        ['Search For Tasks', '^&*^chaLleNge%%. &$', 1],
+        ['Search For Tasks', '^&*^Sport%%. &$', 1],
     ],
     [
         ['Refresh', '', 999],

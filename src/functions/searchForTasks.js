@@ -6,8 +6,8 @@ export function searchForTasks(data, param) {
         .filter(v => {
             return (
                 v.tags.some(t => includes(param, t)) ||
-                includes(param, v.teacherName) ||
-                v.videoTitle.split(': ').some(t => includes(param, t))
+                includes(param, v.guest) ||
+                v.task.split(': ').some(t => includes(param, t))
             )
         })
 }
