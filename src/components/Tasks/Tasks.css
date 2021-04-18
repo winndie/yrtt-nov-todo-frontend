@@ -1,13 +1,10 @@
 .container-margin {
-    margin-top: 5rem;
-}
-.list {
-    background-color: #008000;
-    padding: 1%;
+    margin-top: 1%;
 }
 .item {
     background-color: #dddddd;
-    padding: 5%;
+    padding: 1%;
+    margin-bottom: 1%;
 }
 .btn {
     background-color: #008000;
