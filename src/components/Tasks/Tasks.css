@@ -2,13 +2,14 @@
     margin-top: 5rem;
 }
 .list {
-    background-color: grey;
+    background-color: #008000;
     padding: 1%;
 }
 .item {
-    background-color: rgb(202, 202, 202);
+    background-color: #dddddd;
     padding: 5%;
 }
 .btn {
-  border-spacing: 10%;
+    background-color: #008000;
+    border-spacing: 10%;
 }    

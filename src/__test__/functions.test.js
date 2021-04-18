@@ -6,21 +6,29 @@ import each from 'jest-each'
 
 let state = data
 const suits = [
+    // [
+    //     ['Refresh', '', 999],
+    //     ['Search For Tasks', '', 0],
+    //     ['Get Top Rated Tasks For Tags', '', 0],
+    // ],
+    // [
+    //     ['Refresh', '', 999],
+    //     ['Search For Tasks', '^&*^eVeaaa%%. &$', 46],
+    //     ['Get Top Rated Tasks For Tags', '555  engaGiNg123', 16],
+    //     ['Search For Tasks', '^&*^Sport%%. &$', 1],
+    // ],
+    // [
+    //     ['Refresh', '', 999],
+    //     ['Search For Tasks', 'excitingmoving', 446],
+    //     ['Get Top Rated Tasks For Tags', 'excitingmoving', 20],
+    // ],
     [
         ['Refresh', '', 999],
-        ['Search For Tasks', '', 0],
-        ['Get Top Rated Tasks For Tags', '', 0],
+        ['Search For Tasks', 'raiLWay', 129],
     ],
     [
         ['Refresh', '', 999],
-        ['Search For Tasks', '^&*^eVeaaa%%. &$', 46],
-        ['Get Top Rated Tasks For Tags', '555  engaGiNg123', 16],
-        ['Search For Tasks', '^&*^Sport%%. &$', 1],
-    ],
-    [
-        ['Refresh', '', 999],
-        ['Search For Tasks', 'excitingmoving', 446],
-        ['Get Top Rated Tasks For Tags', 'excitingmoving', 20],
+        ['Search For Tasks', 'Eat', 138],
     ],
 ]
 

@@ -4,4 +4,5 @@ export function lower(param) {
 
 export function includes(base, input) {
     return lower(base).includes(input.toLowerCase())
+    
 }

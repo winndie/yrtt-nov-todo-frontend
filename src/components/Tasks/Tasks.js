@@ -25,7 +25,7 @@ function Tasks() {
                         setData(searchForTasks(data, param))
                     break
                 case 'btn btn-primary refresh':
-                    setData([])
+                    setData(undefined)
                     fetchData(setData)
                     break
             }
@@ -34,7 +34,7 @@ function Tasks() {
 
     loadData(null)
 
-    return (data === undefined ? <div>Loading...</div> :
+    return (
         <section className='container container-margin'>
             <label htmlFor='inputSearch'>Search Tasks</label>
             <input
@@ -58,7 +58,8 @@ function Tasks() {
                     onClick={loadData}>Refresh</button>
             </div>
             <div className='row list'>
-                {data.length === 0 ? <div>No tasks found!</div> :
+                {data === undefined ? <div>Loading...</div> :
+                 data.length === 0 ? <div>No tasks found!</div> :
                     data.map((v, i) =>
                         <div key={v.id} className='col-lg-4 col-sm-6 item'>
                             {/* <video src={v.videoUrl} width='50%' height='35%' controls preload='none' /> */}
