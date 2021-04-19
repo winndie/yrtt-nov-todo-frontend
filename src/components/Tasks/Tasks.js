@@ -15,7 +15,6 @@ function Tasks() {
         }
         else {
             switch (e.target.className) {
-
                 case 'btn btn-primary getTopRated':
                     param.length === 0 ? null :
                         setData(getTopRatedTasksForTags(data, param))
@@ -57,33 +56,22 @@ function Tasks() {
                 <button className='btn btn-primary refresh'
                     onClick={loadData}>Refresh</button>
             </div>
-            <div className='col-12'>
+            <ul className='list-group'>
                 {data === undefined ? <span>Loading...</span> :
-                 data.length === 0 ? <span>No tasks found!</span> :
-                    data.map((v, i) =>
-                        <div key={v.id} className='row item'>
-                            <div className='col-4' data-testid='taskIndex'>{i + 1}</div>
-                            <div className='col-8'>
-                            <div className='row'>
-                            <div className='col-8' data-testid='task'>{v.task}</div>
-                            <div className='col-4'>
-                            <span>Guest: </span><span data-testid='guest'>{v.guest}</span>
-                            </div>
-                            <div className='col-8'>
-                                {v.tags.map(t => 
-                                <span key={t} data-testid='tag'>
-                                {'・' + t}
-                                </span>)}
-                            </div>
-                            <div className='col-4' >
+                    data.length === 0 ? <span>No tasks found!</span> :
+                        data.map((v, i) =>
+                            <li className='list-group-item' key={v.id}>
+                                <div data-testid='taskIndex'>{i + 1}</div>
+                                <div data-testid='task'>{v.task}</div>
+                                <span>Guest: </span><span data-testid='guest'>{v.guest}</span>
                                 <span>Rating : </span>
                                 <span>{v.averageUserRating.toLocaleString("en", { style: "percent" })}</span>
-                            </div>
-                            </div>
-                            </div>
-                        </div>
-                    )}
-            </div>
+                                {v.tags.map(t =>
+                                <span className='badge' key={t} data-testid='tag'>
+                                    {'・' + t}</span>)}
+                            </li>
+                        )}
+            </ul>
         </section >
     )
 }
