@@ -1,7 +1,10 @@
 .container-margin {
     margin-top: 1%;
 }
-.item {
+ol {
+    list-style-type: decimal-leading-zero;
+  }
+li {
     background-color: #dddddd;
     padding: 1%;
     margin-bottom: 1%;

@@ -56,12 +56,11 @@ function Tasks() {
                 <button className='btn btn-primary refresh'
                     onClick={loadData}>Refresh</button>
             </div>
-            <ul className='list-group'>
-                {data === undefined ? <span>Loading...</span> :
-                    data.length === 0 ? <span>No tasks found!</span> :
-                        data.map((v, i) =>
-                            <li className='list-group-item' key={v.id}>
-                                <div data-testid='taskIndex'>{i + 1}</div>
+            <ol>
+                {data === undefined ? 'Loading...' :
+                    data.length === 0 ? 'No tasks found!' :
+                        data.map(v =>
+                            <li data-testid='taskIndex' key={v.id}>
                                 <div data-testid='task'>{v.task}</div>
                                 <span>Guest: </span><span data-testid='guest'>{v.guest}</span>
                                 <span>Rating : </span>
@@ -71,7 +70,7 @@ function Tasks() {
                                     {'・' + t}</span>)}
                             </li>
                         )}
-            </ul>
+            </ol>
         </section >
     )
 }
