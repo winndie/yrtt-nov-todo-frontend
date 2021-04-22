@@ -8,6 +8,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "jest-each": "^26.6.2",
+    "lodash": "^4.17.21",
     "react": "^16.0.2",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.0.2",
@@ -44,6 +45,20 @@
     "eslint": "^7.15.0",
     "eslint-plugin-react": "^7.21.5",
     "jest": "^26.6.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^4.6.0"
-  }
+  },
+  "description": "### Running the application locally",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winndie/todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winndie/todo/issues"
+  },
+  "homepage": "https://github.com/winndie/todo#readme"
 }
