@@ -61,13 +61,19 @@ function Tasks() {
                     data.length === 0 ? 'No tasks found!' :
                         data.map(v =>
                             <li data-testid='taskIndex' key={v.id}>
-                                <div data-testid='task'>{v.task}</div>
-                                <span>Guest: </span><span data-testid='guest'>{v.guest}</span>
+                                <div className='row'>
+                                <div className='col-4' data-testid='task'>{v.task}</div>
+                                <div className='col-4'>
                                 <span>Rating : </span>
                                 <span>{v.averageUserRating.toLocaleString("en", { style: "percent" })}</span>
+                                </div>
+                                <div className='col-4'>
+                                <span>Guest: </span><span data-testid='guest'>{v.guest}</span>
+                                </div>
+                                </div>
                                 {v.tags.map(t =>
-                                <span className='badge' key={t} data-testid='tag'>
-                                    {'・' + t}</span>)}
+                                    <span className='badge' key={t} data-testid='tag'>
+                                        {'・' + t}</span>)}
                             </li>
                         )}
             </ol>
