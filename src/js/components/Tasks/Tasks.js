@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-constructor */
-import './Tasks.css';
+import './Tasks.css'
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import { getData } from "../../actions/index"
@@ -10,16 +10,16 @@ export class Tasks extends Component {
   }
 
   componentDidMount() {
-    this.props.getData();
+    this.props.getData()
   }
 
   render() {
     return (
       <section className='container container-margin'>
       <ol>
-          {this.props.articles === undefined ? 'Loading...' :
-              this.props.articles.length === 0 ? 'No tasks found!' :
-                  this.props.articles.map(v =>
+          {this.props.tasks === undefined ? 'Loading...' :
+              this.props.tasks.length === 0 ? 'No tasks found!' :
+                  this.props.tasks.map(v =>
                       <li data-testid='taskIndex' key={v.id}>
                           <div className='row'>
                           <div className='col-4' data-testid='task'>{v.task}</div>
@@ -44,7 +44,7 @@ export class Tasks extends Component {
 
 function mapStateToProps(state) {
   return {
-    articles: state.remoteArticles.slice(0, 10)
+    tasks: state.remoteTasks.slice(0, 999)
   }
 }
 
