@@ -1,0 +1,19 @@
+.container-margin {
+    margin-top: 1%;
+}
+.form-control{
+    margin-bottom: 1%;
+}
+ol {
+    list-style-type: decimal-leading-zero;
+  }
+li {
+    background-color: #dddddd;
+    padding: 1%;
+    margin-bottom: 1%;
+}
+.btn {
+    background-color: #008000;
+    border-spacing: 1%;
+    margin-bottom: 1%;
+}    
