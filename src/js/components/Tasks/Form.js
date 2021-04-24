@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addArticle } from '../actions/index'
+import { addTask } from '../actions/index'
 
 function mapDispatchToProps(dispatch) {
   return {
-    addArticle: article => dispatch(addArticle(article))
+    addTask: task => dispatch(addTask(task))
   }
 }
 
