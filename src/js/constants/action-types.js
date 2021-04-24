@@ -1,5 +1,6 @@
 export const ADD_TASK = 'ADD_TASK'
 export const DELETE_TASK = 'DELETE_TASK'
+export const SEARCH_TASK = 'SEARCH_TASK'
 export const LOADING_TASK = 'LOADING_TASK'
 export const LOADED_TASK = 'LOADED_TASK'
 export const ENDPOINT_ERROR = 'ENDPOINT_ERROR'

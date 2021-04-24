@@ -1,53 +1,62 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addTask } from '../actions/index'
+import { addTask } from '../../actions/index'
 
 function mapDispatchToProps(dispatch) {
   return {
-    addTask: task => dispatch(addTask(task))
+    addTask: tasks => dispatch(addTask(tasks))
+    // searchTask: tasks => dispatch(searchTask(tasks))
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    tasks: state.remoteTasks
   }
 }
 
 class ConnectedForm extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      title: ''
-    }
+    this.state = {filter:'',tasks:this.props.tasks}
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange(event) {
-    this.setState({ [event.target.id]: event.target.value })
+    console.log('handleChange this.props.tasks>>>'+this.props.tasks.length)
+    console.log('handleChange this.state.filter>>>'+this.state.filter)
+    this.setState({[event.target.id]: event.target.value })
   }
   handleSubmit(event) {
     event.preventDefault()
-    const { title } = this.state
-    this.props.addArticle({ title })
-    this.setState({ title: '' })
+    this.props.searchTask(this.state.filter)
+    this.setState({ filter:'' })
   }
   render() {
-    const { title } = this.state
+    const { filter } = this.state
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
-          <label htmlFor='title'>Title</label>
+          <label htmlFor='filter'>Search for tasks</label>
           <input
             type='text'
-            id='title'
-            value={title}
+            id='filter'
+            value={filter}
             onChange={this.handleChange}
           />
         </div>
-        <button type='submit'>SAVE</button>
+        <button type='submit'>SEARCH</button>
       </form>
     )
   }
 }
 
+// const Form = connect(
+//   null,
+//   mapDispatchToProps
+// )(ConnectedForm)
 const Form = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(ConnectedForm)
-
 export default Form

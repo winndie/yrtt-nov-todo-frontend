@@ -7,6 +7,7 @@ export function forbiddenWordsMiddleware({ dispatch }) {
     return function(action) {
       // do your stuff
       if (action.type === ADD_TASK) {
+        console.log('middleware addTask>>>'+action.payload.length+' '+action.payload[0].id)        
         const foundWord = forbiddenWords.filter(word =>
           action.payload.title.includes(word)
         )

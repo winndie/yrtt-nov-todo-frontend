@@ -44,7 +44,7 @@ export class Tasks extends Component {
 
 function mapStateToProps(state) {
   return {
-    tasks: state.remoteTasks.slice(0, 999)
+    tasks: state.remoteTasks
   }
 }
 

@@ -6,6 +6,10 @@ export function addTask(payload) {
   return { type: type.ADD_TASK, payload }
 }
 
+export function searchTask(payload) {
+  return { type: type.SEARCH_TASK, payload }
+}
+
 export function getData() {
   return async function(dispatch) {
     try {
