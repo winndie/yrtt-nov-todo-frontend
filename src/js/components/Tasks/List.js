@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component} from 'react'
 import { connect } from 'react-redux'
-import { getData } from '../../actions/index'
+import { getTasks } from '../../actions/index'
 
 export class Tasks extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export class Tasks extends Component {
   }
 
   componentDidMount() {
-    this.props.getData()
+    this.props.getTasks()
   }
 
   render() {
@@ -47,5 +47,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { getData }
+  { getTasks }
 )(Tasks)

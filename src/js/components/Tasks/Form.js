@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../actions/index'
-import RefreshButton from './Buttons'
+import RefreshButton from '../Buttons/RefreshButton'
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -56,10 +56,6 @@ class ConnectedForm extends Component {
   }
 }
 
-// const Form = connect(
-//   null,
-//   mapDispatchToProps
-// )(ConnectedForm)
 const Form = connect(
   mapStateToProps,
   mapDispatchToProps

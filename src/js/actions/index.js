@@ -12,11 +12,11 @@ export function searchTask(payload) {
   return { type: type.SEARCH_TASK, payload }
 }
 
-export function getData() {
+export function getTasks() {
   return async function(dispatch) {
     try {
       const result = await axios.get(url)
-      console.log('actions getData>>>'+result.data[0].task)
+      console.log('actions getTasks>>>'+result.data[0].task)
       return dispatch({ type: type.LOADED_TASK, payload: result.data })        
     } catch (error) {
       return dispatch({ type: type.ENDPOINT_ERROR, payload: [] })              
