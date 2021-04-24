@@ -32,7 +32,7 @@ class ConnectedForm extends Component {
   handleSubmit(event) {
     event.preventDefault()
     console.log('Form handleSubmit>>>'+event.target.tagName)
-    const { filter } = this.state;
+    const { filter } = this.state
     this.props.searchTask({ filter })
     this.setState({ filter:'' })
   }
