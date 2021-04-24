@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import './Tasks.css'
-import React, { Component } from "react"
+import React, { Component} from "react"
 import { connect } from "react-redux"
 import { getData } from "../../actions/index"
 
@@ -18,7 +18,7 @@ export class Tasks extends Component {
       <section className='container container-margin'>
       <ol>
           {this.props.tasks === undefined ? 'Loading...' :
-              this.props.tasks.length === 0 ? 'No tasks found!' :
+              this.props.tasks.length === 0 ? 'No task found!' :
                   this.props.tasks.map(v =>
                       <li data-testid='taskIndex' key={v.id}>
                           <div className='row'>
