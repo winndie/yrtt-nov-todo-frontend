@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../actions/index'
+import RefreshButton from './Buttons'
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -23,15 +24,15 @@ class ConnectedForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange(event) {
-    console.log('handleChange this.props.tasks>>>'+this.props.tasks[0].task)
-    console.log('handleChange this.state.filter>>>'+this.state.filter)
+    console.log('Form handleChange this.props.tasks>>>'+this.props.tasks[0].task)
+    console.log('Form handleChange this.state.filter>>>'+this.state.filter)
     this.setState({[event.target.id]: event.target.value })
   }
   handleSubmit(event) {
     event.preventDefault()
+    console.log('Form handleSubmit>>>'+event.target.tagName)
     const { filter } = this.state;
     this.props.searchTask({ filter })
-    // this.props.searchTask(this.props.tasks)
     this.setState({ filter:'' })
   }
   render() {
@@ -39,17 +40,19 @@ class ConnectedForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
-          <label htmlFor='filter'>Search for tasks</label>
+          <label htmlFor='filter'>Search Tasks</label>
           <input
-            type='text'
-            id='filter'
-            value={filter}
-            onChange={this.handleChange}
+                className='form-control'
+                type='text'
+                id='filter'
+                value={filter}
+                onChange={this.handleChange}
           />
         </div>
-        <button type='submit'>SEARCH</button>
+        <button className='btn btn-primary' type='submit'>SEARCH</button>
+        <RefreshButton/>
       </form>
-    )
+        )
   }
 }
 

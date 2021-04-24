@@ -1,5 +1,4 @@
 /* eslint-disable no-useless-constructor */
-import './Tasks.css'
 import React, { Component} from 'react'
 import { connect } from 'react-redux'
 import { getData } from '../../actions/index'
@@ -15,7 +14,6 @@ export class Tasks extends Component {
 
   render() {
     return (
-      <section className='container container-margin'>
       <ol>
           {this.props.tasks === undefined ? 'Loading...' :
               this.props.tasks.length === 0 ? 'No task found!' :
@@ -37,7 +35,6 @@ export class Tasks extends Component {
                       </li>
                   )}
       </ol>
-  </section >
     )
   }
 }
