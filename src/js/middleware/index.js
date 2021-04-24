@@ -1,11 +1,12 @@
-import * as type from '../constants/action-types'
+import * as types from '../constants/action-types'
+
 
 const forbiddenWords = ['spam', 'money']
 
 export function forbiddenWordsMiddleware({ dispatch }) {
   return function(next) {
     return function(action) {
-      if (action.type === type.ADD_TASK) {
+      if (action.type === types.ADD_TASK) {
         console.log('middleware ADD_TASK>>>'+action.payload[0].task)        
         const foundWord = forbiddenWords.filter(word =>
           action.payload.title.includes(word)
@@ -22,7 +23,7 @@ export function forbiddenWordsMiddleware({ dispatch }) {
 export function searchMiddleware({ dispatch }) {
   return function(next) {
     return function(action) {
-      if (action.type === type.SEARCH_TASK) {
+      if (action.type === types.SEARCH_TASK) {
         console.log('middleware SEARCH_TASK filter>>>'+action.payload.filter)        
       }
       return next(action)

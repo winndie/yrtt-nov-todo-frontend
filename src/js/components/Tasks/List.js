@@ -1,7 +1,15 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component} from 'react'
 import { connect } from 'react-redux'
-import { getTasks } from '../../actions/index'
+import { emptyTasks,getTasks } from '../../actions/index'
+import * as types from '../../constants/action-types'
+
+function mapStateToProps(state) {
+  return {
+    tasks: state.tasks,
+    type: state.type
+  }
+}
 
 export class Tasks extends Component {
   constructor(props) {
@@ -9,13 +17,15 @@ export class Tasks extends Component {
   }
 
   componentDidMount() {
+    this.props.emptyTasks()
     this.props.getTasks()
   }
 
   render() {
+    console.log('List this.props.type>>>'+this.props.type)
     return (
       <ol>
-          {this.props.tasks === undefined ? 'Loading...' :
+          {this.props.type === types.EMPTY_TASKS ? 'Loading...' :
               this.props.tasks.length === 0 ? 'No task found!' :
                   this.props.tasks.map(v =>
                       <li data-testid='taskIndex' key={v.id}>
@@ -39,13 +49,7 @@ export class Tasks extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    tasks: state.tasks
-  }
-}
-
 export default connect(
   mapStateToProps,
-  { getTasks }
+  { emptyTasks,getTasks }
 )(Tasks)

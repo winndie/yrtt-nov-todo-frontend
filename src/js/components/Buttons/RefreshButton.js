@@ -1,7 +1,14 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component} from 'react'
 import { connect } from 'react-redux'
-import { getTasks } from '../../actions/index'
+import { emptyTasks,getTasks } from '../../actions/index'
+
+function mapStateToProps(state) {
+  return {
+    tasks: state.tasks,
+    type: state.type
+  }
+}
 
 export class RefreshButton extends Component {
   constructor(props) {
@@ -12,20 +19,17 @@ export class RefreshButton extends Component {
       <button
         className='btn btn-primary'
         type='button'
-        onClick={()=>this.props.getTasks()}>
+        onClick={()=>{
+          this.props.emptyTasks()
+          this.props.getTasks()
+        }}>
         REFRESH
       </button>
     )
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    tasks: state.tasks
-  }
-}
-
 export default connect(
   mapStateToProps,
-  { getTasks }
+  { emptyTasks,getTasks }
 )(RefreshButton)
