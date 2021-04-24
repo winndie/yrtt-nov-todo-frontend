@@ -9,7 +9,6 @@ const store = createStore(
   rootReducer,
   storeEnhancers(
     applyMiddleware(
-      middleware.searchMiddleware,
       middleware.forbiddenWordsMiddleware, thunk))
 )
 

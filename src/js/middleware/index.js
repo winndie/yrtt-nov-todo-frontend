@@ -19,14 +19,3 @@ export function forbiddenWordsMiddleware({ dispatch }) {
     }
   }
 }
-
-export function searchMiddleware({ dispatch }) {
-  return function(next) {
-    return function(action) {
-      if (action.type === types.SEARCH_TASK) {
-        console.log('middleware SEARCH_TASK filter>>>'+action.payload.filter)        
-      }
-      return next(action)
-    }
-  }
-}
