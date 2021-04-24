@@ -1,29 +1,27 @@
 import * as type from '../constants/action-types'
 
-const initialState = {
-  tasks: [],
-  remoteTasks: []
-}
+const initialState = {tasks: []}
 
 function rootReducer(state = initialState, action) {
 
   if (action.type === type.ADD_TASK) {
-    console.log('rootReducer addTask>>>'+action.payload.length+' '+action.payload[0].id)
+    console.log('rootReducer ADD_TASK>>>'+action.payload[0].task)
     return Object.assign({}, state, {
       tasks: state.tasks.concat(action.payload)
     })
   }
 
   if (action.type === type.SEARCH_TASK) {
-    console.log('rootReducer searchTask>>>'+action.payload.length+' '+action.payload[0].id)
+    console.log('rootReducer SEARCH_TASK>>>'+action.payload[0].task)
     return Object.assign({}, state, {
       tasks: state.tasks.concat(action.payload)
     })
   }
 
   if (action.type === type.LOADED_TASK) {
+    console.log('rootReducer LOADED_TASK>>>'+action.payload[0].task)
     return Object.assign({}, state, {
-      remoteTasks: state.remoteTasks.concat(action.payload)
+      tasks: state.tasks.concat(action.payload)
     })
   }
   return state

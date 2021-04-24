@@ -1,35 +1,36 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addTask } from '../../actions/index'
+import * as actions from '../../actions/index'
 
 function mapDispatchToProps(dispatch) {
   return {
-    addTask: tasks => dispatch(addTask(tasks))
-    // searchTask: tasks => dispatch(searchTask(tasks))
+    // addTask: tasks => dispatch(actions.addTask(tasks))
+    searchTask: tasks => dispatch(actions.searchTask(tasks))
   }
 }
 
 function mapStateToProps(state) {
   return {
-    tasks: state.remoteTasks
+    tasks: state.tasks
   }
 }
 
 class ConnectedForm extends Component {
   constructor(props) {
     super(props)
-    this.state = {filter:'',tasks:this.props.tasks}
+    this.state = {filter:''}
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange(event) {
-    console.log('handleChange this.props.tasks>>>'+this.props.tasks.length)
+    console.log('handleChange this.props.tasks>>>'+this.props.tasks[0].task)
     console.log('handleChange this.state.filter>>>'+this.state.filter)
     this.setState({[event.target.id]: event.target.value })
   }
   handleSubmit(event) {
     event.preventDefault()
-    this.props.searchTask(this.state.filter)
+    // this.props.addTask(this.props.tasks)
+    this.props.searchTask(this.props.tasks)
     this.setState({ filter:'' })
   }
   render() {

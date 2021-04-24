@@ -44,7 +44,7 @@ export class Tasks extends Component {
 
 function mapStateToProps(state) {
   return {
-    tasks: state.remoteTasks
+    tasks: state.tasks
   }
 }
 
