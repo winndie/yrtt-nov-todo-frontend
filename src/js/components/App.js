@@ -1,10 +1,10 @@
-import React from "react"
-import Tasks from "./Tasks/Tasks"
+import React from 'react'
+import List from './Tasks/List'
 
 const App = () => (
   <>
     <div>
-      <Tasks />
+      <List />
     </div>
   </>
 )

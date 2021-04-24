@@ -1,4 +1,4 @@
-import { ADD_TASK } from "../constants/action-types"
+import { ADD_TASK } from '../constants/action-types'
 
 const initialState = {
   tasks: [],
@@ -12,7 +12,7 @@ function rootReducer(state = initialState, action) {
     })
   }
 
-  if (action.type === "DATA_LOADED") {
+  if (action.type === 'DATA_LOADED') {
     return Object.assign({}, state, {
       remoteTasks: state.remoteTasks.concat(action.payload)
     })

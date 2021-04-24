@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-constructor */
 import './Tasks.css'
-import React, { Component} from "react"
-import { connect } from "react-redux"
-import { getData } from "../../actions/index"
+import React, { Component} from 'react'
+import { connect } from 'react-redux'
+import { getData } from '../../actions/index'
 
 export class Tasks extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ export class Tasks extends Component {
                           <div className='col-4' data-testid='task'>{v.task}</div>
                           <div className='col-4'>
                           <span>Rating : </span>
-                          <span>{v.averageUserRating.toLocaleString("en", { style: "percent" })}</span>
+                          <span>{v.averageUserRating.toLocaleString('en', { style: 'percent' })}</span>
                           </div>
                           <div className='col-4'>
                           <span>Guest: </span><span data-testid='guest'>{v.guest}</span>

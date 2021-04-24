@@ -1,6 +1,6 @@
-import { ADD_TASK } from "../constants/action-types"
+import { ADD_TASK } from '../constants/action-types'
 
-const forbiddenWords = ["spam", "money"]
+const forbiddenWords = ['spam', 'money']
 
 export function forbiddenWordsMiddleware({ dispatch }) {
   return function(next) {
@@ -11,7 +11,7 @@ export function forbiddenWordsMiddleware({ dispatch }) {
           action.payload.title.includes(word)
         )
         if (foundWord.length) {
-          return dispatch({ type: "FOUND_BAD_WORD" })
+          return dispatch({ type: 'FOUND_BAD_WORD' })
         }
       }
       return next(action)
