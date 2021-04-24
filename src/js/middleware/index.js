@@ -23,7 +23,8 @@ export function searchMiddleware({ dispatch }) {
   return function(next) {
     return function(action) {
       if (action.type === type.SEARCH_TASK) {
-        console.log('middleware SEARCH_TASK>>>'+action.payload[0].task)        
+        console.log('middleware SEARCH_TASK payload>>>'+action.payload[0].task)        
+        console.log('middleware SEARCH_TASK filter>>>'+action)        
       }
       return next(action)
     }
