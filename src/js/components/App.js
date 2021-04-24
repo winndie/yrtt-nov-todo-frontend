@@ -1,5 +1,5 @@
-import React from "react";
-import Tasks from "./Tasks/Tasks";
+import React from "react"
+import Tasks from "./Tasks/Tasks"
 
 const App = () => (
   <>
@@ -7,6 +7,6 @@ const App = () => (
       <Tasks />
     </div>
   </>
-);
+)
 
-export default App;
+export default App
