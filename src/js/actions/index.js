@@ -8,7 +8,7 @@ export function addTask(payload) {
 }
 
 export function searchTask(payload) {
-  console.log('actions searchTask>>>'+payload[0].task)
+  console.log('actions searchTask>>>'+payload.filter)
   return { type: type.SEARCH_TASK, payload }
 }
 

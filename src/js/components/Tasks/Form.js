@@ -29,8 +29,9 @@ class ConnectedForm extends Component {
   }
   handleSubmit(event) {
     event.preventDefault()
-    // this.props.addTask(this.props.tasks)
-    this.props.searchTask(this.props.tasks)
+    const { filter } = this.state;
+    this.props.searchTask({ filter })
+    // this.props.searchTask(this.props.tasks)
     this.setState({ filter:'' })
   }
   render() {

@@ -1,4 +1,5 @@
 import * as type from '../constants/action-types'
+import {searchForTasks} from '../functions/searchForTasks'
 
 const initialState = {tasks: []}
 
@@ -13,10 +14,10 @@ function rootReducer(state = initialState, action) {
   }
 
   if (action.type === type.SEARCH_TASK) {
-    console.log('rootReducer SEARCH_TASK payload>>>'+action.payload[0].task)
+    console.log('rootReducer SEARCH_TASK payload.filter>>>'+action.payload.filter)
     console.log('rootReducer SEARCH_TASK state>>>'+state.tasks[0].task)
     return Object.assign({}, state, {
-      tasks: action.payload
+      tasks: searchForTasks(state.tasks,action.payload.filter)
     })
   }
 
