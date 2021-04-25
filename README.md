@@ -20,16 +20,10 @@ npm start
 
 The application will then be accessible at:
 
-http://localhost:3000
+http://localhost:8080
 
-To run unit test of the application:
-```
-npm test
-```
 ### Technology stack used
 * Redux
+* Webpack
 * ReactJS
 * React Bootstrap
-* Jest-each
-* Axios
-* ESLint
