@@ -1,5 +1,4 @@
 import * as types from '../constants/action-types'
-import axios from 'axios'
 const url = 'https://winndie.github.io/data/todo.json'
 
 export function addTask(payload) {
@@ -18,11 +17,17 @@ export function emptyTasks() {
 }
 
 export function getTasks() {
-  return async function (dispatch) {
+  return function (dispatch) {
     try {
-      const result = await axios.get(url)
-      console.log('actions getTasks>>>' + result.data[0].task)
-      return dispatch({ type: types.LOADED_TASKS, payload: result.data })
+      fetch(url)
+          .then(response => {
+            if (!response.ok) throw Error(response.statusText);
+            return response.json()
+          })
+          .then(json => {
+            console.log('actions getTasks>>>' + json[0])
+            return dispatch({ type: types.LOADED_TASKS, payload: json })      
+          })
     } catch (error) {
       return dispatch({ type: types.ENDPOINT_ERROR, payload: [] })
     }
