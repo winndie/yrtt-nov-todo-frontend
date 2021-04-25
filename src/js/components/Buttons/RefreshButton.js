@@ -1,7 +1,8 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { emptyTasks, getTasks } from '../../actions/index'
+import {/* webpackChunkName: 'emptyTasks' */ emptyTasks, 
+        /* webpackChunkName: 'getTasks' */getTasks } from '../../actions/index'
 
 function mapStateToProps(state) {
   return {
